@@ -4,32 +4,21 @@
 import{ useState } from "react" // we use this to add state to our component
 //state lsts us keep track of chaning data and shpw it in the componenent 
 
+import Form from "./components/Form"
+import Table from "./components/Table"
+
 function HomePage (){
-
- //create some state keeping track of the changing count
-const[count, setCount] = useState(0) //useState is a hook that allows us to add state to our component
-
-
     return (
-
         <div>
-
-            <h1>Counter: {count}</h1>
-
-            <button onClick = {()=>{
-                setCount(count + 1) //this will add one to the count
-            }}> Add One </button>
-
-
-
- 
+            <h1> FavLinks </h1>
+            
+            <Form />
+           
+            {/*a table the user ca use to see their submission*/}
+            <Table />
 
         </div>
-
- 
-
     ) 
-
 }
 
 export default HomePage
