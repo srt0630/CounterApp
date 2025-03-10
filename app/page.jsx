@@ -7,15 +7,28 @@ import{ useState } from "react" // we use this to add state to our component
 import Form from "./components/Form"
 import Table from "./components/Table"
 
+
 function HomePage (){
+   
+   const [newFavLink, setNewFavLink] = useState({})
+   
+   
+   //state is an array with 2 values
+    // function handleNewFavLink(faveLink){
+    //favLink contains an object with the name and URL of the new link  
+function handleNewFavLink(favLink){
+        console.log(favLink, "in HomePage") //made the change
+        setNewFavLink(favLink) //update the state with the new value
+}
     return (
         <div>
             <h1> FavLinks </h1>
-            
-            <Form />
+            {/*the form is responsible for taking the input 
+           and alerting the HomePage when it needs to pass it to the table
+            */}
+            <Form submitFavLink={handleNewFavLink} />
            
-            {/*a table the user ca use to see their submission*/}
-            <Table />
+             <Table data ={newFavLink}/>
 
         </div>
     ) 
